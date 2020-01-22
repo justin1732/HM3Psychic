@@ -1,78 +1,10 @@
+//For Alphabet array
 
-// //Variable Setup
-// let wins = 0;
-// let losses = 0;
-// let guessesLeft = 10;
-// let guessesLeft = 13;
-// let guessesSoFar = [];
-// let psychicChoice = "";
-// let userGuess = "";
-
-// //Alphabet array. There's an easier way, but I forgot it.
-// let alphabet = [
-// 			"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
-// 			"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-// 			];
-
-// //Time to code!            
-// let psychic = () =>  {
-// 	psychicChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-// 	// console.log(psychicChoice);
-// }
-
-// let resetGame = () => {
-// 	guessesLeft = 10;
-// 	guessesSoFar = [];
-// 	psychic();
-// };
-
-// document.onkeyup = (event) => {
-
-// 	let userGuess = event.key.toLowerCase();
-// 	userGuess = event.key.toLowerCase();
-
-// 	psychic();
-
-// 	console.log(userGuess);
-
-
-// 	if (userGuess == psychicChoice) {
-// 		wins++;
-// 		resetGame();
-// 		correct++;
-// 		alertWin();
-//     }
-     
-//     else (userGuess != psychicChoice) {
-// 		guessesLeft--;
-// 		guessesSoFar.push(userGuess);
-//     }};
-
-var alphabet = ["a", 
-				"b", 
-				"c", 
-				"d", 
-				"e", 
-				"f", 
-				"g", 
-				"h", 
-				"i", 
-				"j", 
-				"k", 
-				"l", 
-				"m", 
-				"n", 
-				"o", 
-				"p", 
-				"q", 
-				"r", 
-				"s", 
-				"t", 
-				"u", 
-				"v", 
-				"x", 
-				"y", 
-				"z"];
+let alphabet = [
+"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
+"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+];
+//Variables
 var wins = 0;
 var losses = 0;
 var left = 9;
@@ -81,6 +13,7 @@ var guessesSoFar = [];
 var psychicLetter;
 var zero = "";
 
+//Functions
 var newLetter = function() {
     psychicLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
 };
@@ -102,6 +35,7 @@ var newGame = function() {
     document.getElementById("guesses").innerHTML = "Guesses so far: " + zero;
     }
 
+//User entering
 document.onkeyup = function(event) {
 	var userGuess = event.key;
     left--;
@@ -122,3 +56,4 @@ document.onkeyup = function(event) {
         newGame();
     }
 };
+//Couldn't get the "Guesses so far" text clear. Sorry.
